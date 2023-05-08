@@ -1,11 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 const Coffees = ({ coffees }) => {
   const { name, supplier, taster, quantity, category, details, photoURL } =
     coffees || {};
+  const [useCoffees, setUseCoffees] = useState(coffees);
+  // delete operation
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/coffee/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            const remaining = useCoffees.filter((coffee) => coffee._id !== id);
+            setUseCoffees(remaining);
+            Swal.fire("Deleted!", "Your coffee has been deleted.", "success");
+            console.log(data);
+          });
+      }
+    });
+  };
   return (
     <div className="grid grid-cols-2 gap-5 max-w-6xl mx-auto  ">
-      {coffees.map((coffee) => {
+      {useCoffees.map((coffee) => {
         return (
           <div
             key={coffee?._id}
@@ -31,8 +58,15 @@ const Coffees = ({ coffees }) => {
               <Link to={`/details/${coffee?._id}`} className="border-2 mt-1">
                 DETAILS
               </Link>
-              <Link className="border-2 mt-1">EDIT</Link>
-              <Link className="border-2 mt-1">DELETE</Link>
+              <Link to={`update/${coffee?._id}`} className="border-2 mt-1">
+                EDIT
+              </Link>
+              <Link
+                onClick={() => handleDelete(coffee._id)}
+                className="border-2 mt-1"
+              >
+                DELETE
+              </Link>
             </div>
           </div>
         );
