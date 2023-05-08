@@ -1,8 +1,46 @@
 import React from "react";
+import Swal from "sweetalert2";
 
 const AddCoffee = () => {
   const handleForm = (e) => {
     e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const supplier = form.supplier.value;
+    const taster = form.taster.value;
+    const quantity = form.quantity.value;
+    const category = form.category.value;
+    const details = form.details.value;
+    const photoURL = form.photoURL.value;
+    const newCoffee = {
+      name,
+      supplier,
+      taster,
+      quantity,
+      category,
+      details,
+      photoURL,
+    };
+    fetch("http://localhost:5000/coffee", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newCoffee),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Coffee added successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
+    console.log(newCoffee);
+    form.reset();
   };
   return (
     <div className="bg-[#F4F3F0] px-24 py-10">
@@ -70,7 +108,7 @@ const AddCoffee = () => {
             <label className="input-group">
               <input
                 type="text"
-                name="taste"
+                name="taster"
                 placeholder="Taste"
                 className="input input-bordered w-full"
               />
@@ -115,7 +153,7 @@ const AddCoffee = () => {
             <label className="input-group">
               <input
                 type="text"
-                name="photo"
+                name="photoURL"
                 placeholder="Photo URL"
                 className="input input-bordered w-full"
               />
