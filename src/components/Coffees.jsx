@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 const Coffees = ({ coffees }) => {
   const { name, supplier, taster, quantity, category, details, photoURL } =
     coffees || {};
@@ -6,20 +7,32 @@ const Coffees = ({ coffees }) => {
     <div className="grid grid-cols-2 gap-5 max-w-6xl mx-auto  ">
       {coffees.map((coffee) => {
         return (
-          <div className=" p-5 space-y-2 bg-gray-100 rounded-lg flex items-center space-x-12">
-            <img src={coffee?.photoURL} alt="" />
-            <div className="space-y-2">
-              <h1>Name: {coffee?.name}</h1>
-              <h1>Supplier: {coffee?.supplier}</h1>
-              <h1>Taster: {coffee?.taster}</h1>
-              <h1>Quantity: {coffee?.quantity}</h1>
-              <h1>Category: {coffee?.category}</h1>
-              <h1>Details: {coffee?.details}</h1>
+          <div
+            key={coffee?._id}
+            className=" p-5 space-y-2 bg-gray-100 rounded-lg flex items-center space-x-12 shadow-lg"
+          >
+            <div className="w-40">
+              <img className="w-full h-full" src={coffee?.photoURL} alt="" />
             </div>
-            <div>
-              <h1>Eye</h1>
-              <h1>Eye</h1>
-              <h1>Delete</h1>
+            <div className="space-y-2">
+              <h1>
+                <span className="font-semibold mr-2">Name</span>: {coffee?.name}
+              </h1>
+              <h1>
+                <span className="font-semibold mr-2">Supplier</span>:{" "}
+                {coffee?.supplier}
+              </h1>
+              <h1>
+                <span className="font-semibold mr-2">Taster</span>:{" "}
+                {coffee?.taster}
+              </h1>
+            </div>
+            <div className="flex flex-col">
+              <Link to={`/details/${coffee?._id}`} className="border-2 mt-1">
+                DETAILS
+              </Link>
+              <Link className="border-2 mt-1">EDIT</Link>
+              <Link className="border-2 mt-1">DELETE</Link>
             </div>
           </div>
         );
