@@ -6,7 +6,7 @@ import bg4 from "../assets/images/icons/4.png";
 const Feature = () => {
   return (
     <div className="bg-[#ECEAE3]  ">
-      <div className="max-w-4xl p-5 mx-auto justify-center flex lg:flex-row flex-col">
+      <div className="max-w-4xl gap-5 p-5 mx-auto justify-center flex lg:flex-row flex-col">
         <div className="space-y-3">
           <img className="" src={bg1} alt="" />
           <h1 className="text-lg font-semibold">Awesome Aroma</h1>

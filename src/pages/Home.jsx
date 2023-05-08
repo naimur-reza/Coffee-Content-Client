@@ -1,5 +1,6 @@
 import React from "react";
 import Feature from "../components/Feature";
+import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <>
@@ -17,6 +18,7 @@ const Home = () => {
         </div>
       </div>
       <Feature />
+      <Link to={"/addCoffee"}>Add coffee</Link>
     </>
   );
 };
