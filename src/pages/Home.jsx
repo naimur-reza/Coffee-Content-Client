@@ -1,7 +1,10 @@
 import React from "react";
 import Feature from "../components/Feature";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import Coffees from "../components/Coffees";
 const Home = () => {
+  const coffees = useLoaderData();
+  console.log(coffees);
   return (
     <>
       <div className="bg-[url('../../src/assets/images/more/3.png')] flex items-center justify-center h-[calc(100vh-84px)] object-cover w-full object-top px-20">
@@ -19,6 +22,7 @@ const Home = () => {
       </div>
       <Feature />
       <Link to={"/addCoffee"}>Add coffee</Link>
+      <Coffees coffees={coffees} />
     </>
   );
 };
