@@ -12,14 +12,14 @@ const Follow = () => {
     <>
       <h1 className="text-4xl text-center mt-14">Our Upcoming Coffees</h1>
       <div className="grid lg:grid-cols-4 px-10 my-10 grid-cols-2 gap-5">
-        <img src={ig1} alt="" />
-        <img src={ig2} alt="" />
-        <img src={ig3} alt="" />
-        <img src={ig4} alt="" />
-        <img src={ig5} alt="" />
-        <img src={ig6} alt="" />
-        <img src={ig7} alt="" />
-        <img src={ig8} alt="" />
+        <img className="hover:scale-105 duration-200" src={ig1} alt="" />
+        <img className="hover:scale-105 duration-200" src={ig2} alt="" />
+        <img className="hover:scale-105 duration-200" src={ig3} alt="" />
+        <img className="hover:scale-105 duration-200" src={ig4} alt="" />
+        <img className="hover:scale-105 duration-200" src={ig5} alt="" />
+        <img className="hover:scale-105 duration-200" src={ig6} alt="" />
+        <img className="hover:scale-105 duration-200" src={ig7} alt="" />
+        <img className="hover:scale-105 duration-200" src={ig8} alt="" />
       </div>
     </>
   );
