@@ -1,5 +1,6 @@
 import React from "react";
-import { useLoaderData, useNavigation } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
+import { useLoaderData, useNavigation, Link } from "react-router-dom";
 import Swal from "sweetalert2";
 const Update = () => {
   const navigate = useNavigation();
@@ -49,10 +50,16 @@ const Update = () => {
       });
   };
   return (
-    <div className="bg-[#F4F3F0] px-24 py-10">
+    <div className="bg-[#F4F3F0] lg:px-24 py-10">
+      <Link
+        to={"/"}
+        className="bg-yellow-900   bg-opacity-70 text-cen text-white px-4 py-2 shadow-lg s shadow-yellow-900 font-semibold rounded-lg mt-2 lg:mx-0 mx-5 inline-flex gap-2 items-center"
+      >
+        <FaArrowLeft /> Back to home
+      </Link>
       <div className="text-center space-y-2">
         <h1 className="text-3xl font-semibold text-gray-700">Update Coffee</h1>
-        <p className="tracking-wide px-20">
+        <p className="tracking-wide lg:px-20 px-7">
           It is a long established fact that a reader will be distraceted by the
           readable content of a page when looking at its layout. The point of
           using Lorem Ipsum is that it has a more-or-less normal distribution of
@@ -60,7 +67,7 @@ const Update = () => {
         </p>
       </div>
 
-      <form onSubmit={handleUpdate}>
+      <form className="p-5 lg:p-0" onSubmit={handleUpdate}>
         {/* form name and quantity row */}
         <div className="md:flex mb-8">
           <div className="form-control md:w-1/2">
@@ -77,7 +84,7 @@ const Update = () => {
               />
             </label>
           </div>
-          <div className="form-control md:w-1/2 ml-4">
+          <div className="form-control md:w-1/2 lg:ml-4">
             <label className="label">
               <span className="label-text">Available Quantity</span>
             </label>
@@ -108,7 +115,7 @@ const Update = () => {
               />
             </label>
           </div>
-          <div className="form-control md:w-1/2 ml-4">
+          <div className="form-control md:w-1/2 lg:ml-4">
             <label className="label">
               <span className="label-text">Taste</span>
             </label>
@@ -139,7 +146,7 @@ const Update = () => {
               />
             </label>
           </div>
-          <div className="form-control md:w-1/2 ml-4">
+          <div className="form-control md:w-1/2 lg:ml-4">
             <label className="label">
               <span className="label-text">Details</span>
             </label>

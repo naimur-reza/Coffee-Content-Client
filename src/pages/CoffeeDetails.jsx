@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData, Link, useNavigation } from "react-router-dom";
 import nicetiles from "../assets/images/more/19.png";
+import { FaArrowLeft } from "react-icons/fa";
 const CoffeeDetails = () => {
   const loadedData = useLoaderData();
   const navigation = useNavigation();
@@ -14,14 +15,14 @@ const CoffeeDetails = () => {
       <div className="max-w-2xl mx-auto">
         <Link
           to={"/"}
-          className="bg-yellow-900 block text-white p-2 rounded-lg mt-4"
+          className="bg-yellow-900   bg-opacity-70 text-cen text-white px-4 py-2 shadow-lg s shadow-yellow-900 font-semibold rounded-lg mt-4 lg:mx-0 mx-5 inline-flex gap-2 items-center"
         >
-          Back to home
+          <FaArrowLeft /> Back to home
         </Link>
       </div>
       <div
         key={_id}
-        className=" my-10 max-w-2xl mx-auto p-8 space-y-2 bg-gray-100 rounded-lg flex items-center justify-evenly shadow-lg"
+        className="mx-5 my-10 max-w-2xl lg:mx-auto p-8 space-y-2 bg-gray-100 rounded-lg flex items-center justify-evenly shadow-lg"
       >
         <div className="w-40">
           <img className="w-full h-full" src={photoURL} alt="" />

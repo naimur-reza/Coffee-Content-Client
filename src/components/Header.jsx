@@ -7,9 +7,7 @@ const Header = () => {
         src="../../src/assets/images/more/logo1.png"
         alt=""
       />
-      <h1 className="text-white text-3xl font-semibold font-mono">
-        Espresso Emporium
-      </h1>
+      <h1 className="text-white text-3xl font-bold">Espresso Emporium</h1>
     </div>
   );
 };

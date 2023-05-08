@@ -1,4 +1,6 @@
 import React from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AddCoffee = () => {
@@ -43,13 +45,17 @@ const AddCoffee = () => {
     form.reset();
   };
   return (
-    <div className="bg-[#F4F3F0] px-24 py-10">
+    <div className="bg-[#F4F3F0] lg:px-24 px-4 py-10">
+      <Link
+        to={"/"}
+        className="bg-yellow-900   bg-opacity-70 text-cen text-white px-4 py-2 shadow-lg s shadow-yellow-900 font-semibold rounded-lg lg:mt-2 lg:mx-0 mx-5 inline-flex gap-2 items-center absolute left-0 lg:static"
+      >
+        <FaArrowLeft /> Back to home
+      </Link>
       <div className="text-center space-y-2">
-        <h1 className="text-3xl font-semibold text-gray-700">
-          Add A New Coffee
-        </h1>
-        <p className="tracking-wide px-20">
-          It is a long established fact that a reader will be distraceted by the
+        <h1 className="text-3xl font-bold text-gray-700">Add A New Coffee</h1>
+        <p className="tracking-wide lg:px-20 text-gray-500 font-normal text-lg">
+          It is a long established fact that a reader will be distracted by the
           readable content of a page when looking at its layout. The point of
           using Lorem Ipsum is that it has a more-or-less normal distribution of
           letters, as opposed to using Content here.
@@ -72,7 +78,7 @@ const AddCoffee = () => {
               />
             </label>
           </div>
-          <div className="form-control md:w-1/2 ml-4">
+          <div className="form-control md:w-1/2 lg:ml-4">
             <label className="label">
               <span className="label-text">Available Quantity</span>
             </label>
@@ -101,7 +107,7 @@ const AddCoffee = () => {
               />
             </label>
           </div>
-          <div className="form-control md:w-1/2 ml-4">
+          <div className="form-control md:w-1/2 lg:ml-4">
             <label className="label">
               <span className="label-text">Taste</span>
             </label>
@@ -130,7 +136,7 @@ const AddCoffee = () => {
               />
             </label>
           </div>
-          <div className="form-control md:w-1/2 ml-4">
+          <div className="form-control md:w-1/2 lg:ml-4">
             <label className="label">
               <span className="label-text">Details</span>
             </label>
