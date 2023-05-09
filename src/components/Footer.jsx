@@ -9,7 +9,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className="bg-[url('../../src/assets/images/more/10.png')]  mt-10 p-10 flex justify-evenly lg:items-center flex-col lg:flex-row space-y-3">
+    <div className="bg-[url('https://i.ibb.co/pZb2PpR/10.png')]  mt-10 p-10 flex justify-evenly lg:items-center flex-col lg:flex-row space-y-3">
       <div className="space-y-3">
         <img
           className="w-20"
