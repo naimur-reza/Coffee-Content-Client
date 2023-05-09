@@ -9,7 +9,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className="bg-[url('https://i.ibb.co/pZb2PpR/10.png')]  mt-10 p-10 flex justify-evenly lg:items-center flex-col lg:flex-row space-y-3">
+    <div className="bg-[url('https://i.ibb.co/pZb2PpR/10.png')] w-full  mt-10 p-10 flex justify-evenly lg:items-center flex-col lg:flex-row space-y-3">
       <div className="space-y-3">
         <img
           className="w-20"
@@ -17,7 +17,7 @@ const Footer = () => {
           alt=""
         />
         <h1 className="text-2xl font-semibold t">Espresso Emporium</h1>
-        <p className="w-96">
+        <p className="lg:w-96">
           Always ready to be your friend. Come & Contact with us to share your
           memorable moments, to share with your best companion.
         </p>

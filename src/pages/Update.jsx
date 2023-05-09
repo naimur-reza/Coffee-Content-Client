@@ -1,6 +1,11 @@
 import React from "react";
 import { FaArrowLeft } from "react-icons/fa";
-import { useLoaderData, useNavigation, Link } from "react-router-dom";
+import {
+  useLoaderData,
+  useNavigation,
+  Link,
+  ScrollRestoration,
+} from "react-router-dom";
 import Swal from "sweetalert2";
 const Update = () => {
   const navigate = useNavigation();
@@ -10,6 +15,7 @@ const Update = () => {
   const loadedData = useLoaderData();
   const { name, supplier, taster, quantity, category, details, photoURL, _id } =
     loadedData || {};
+  console.log(loadedData);
   const handleUpdate = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -57,6 +63,7 @@ const Update = () => {
       >
         <FaArrowLeft /> Back to home
       </Link>
+      <ScrollRestoration />
       <div className="text-center space-y-2">
         <h1 className="text-3xl font-semibold text-gray-700">Update Coffee</h1>
         <p className="tracking-wide lg:px-20 px-7">

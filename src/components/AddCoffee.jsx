@@ -1,6 +1,6 @@
 import React from "react";
 import { FaArrowLeft } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, ScrollRestoration } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AddCoffee = () => {
@@ -48,11 +48,12 @@ const AddCoffee = () => {
     <div className="bg-[#F4F3F0] lg:px-24 px-4 py-10">
       <Link
         to={"/"}
-        className="bg-yellow-900   bg-opacity-70 text-cen text-white px-4 py-2 shadow-lg s shadow-yellow-900 font-semibold rounded-lg lg:mt-2 lg:mx-0 mx-5 inline-flex gap-2 items-center absolute left-0 lg:static"
+        className="bg-yellow-900   bg-opacity-70 text-cen text-white px-4 py-2 shadow-lg s shadow-yellow-900 font-semibold rounded-lg lg:mt-2 lg:mx-0 mx-5 inline-flex top-20 gap-2 items-center absolute left-0 lg:static"
       >
         <FaArrowLeft /> Back to home
       </Link>
-      <div className="text-center space-y-2">
+      <ScrollRestoration />
+      <div className="text-center space-y-2 mt-8 lg:mt-0">
         <h1 className="text-3xl font-bold text-gray-700">Add A New Coffee</h1>
         <p className="tracking-wide lg:px-20 text-gray-500 font-normal text-lg">
           It is a long established fact that a reader will be distracted by the
@@ -71,6 +72,7 @@ const AddCoffee = () => {
             </label>
             <label className="input-group">
               <input
+                required
                 type="text"
                 name="name"
                 placeholder="Coffee Name"
@@ -84,6 +86,7 @@ const AddCoffee = () => {
             </label>
             <label className="input-group">
               <input
+                required
                 type="text"
                 name="quantity"
                 placeholder="Available Quantity"
@@ -100,6 +103,7 @@ const AddCoffee = () => {
             </label>
             <label className="input-group">
               <input
+                required
                 type="text"
                 name="supplier"
                 placeholder="Supplier Name"
@@ -113,6 +117,7 @@ const AddCoffee = () => {
             </label>
             <label className="input-group">
               <input
+                required
                 type="text"
                 name="taster"
                 placeholder="Taste"
@@ -129,6 +134,7 @@ const AddCoffee = () => {
             </label>
             <label className="input-group">
               <input
+                required
                 type="text"
                 name="category"
                 placeholder="Category"
@@ -142,6 +148,7 @@ const AddCoffee = () => {
             </label>
             <label className="input-group">
               <input
+                required
                 type="text"
                 name="details"
                 placeholder="Details"
@@ -158,6 +165,7 @@ const AddCoffee = () => {
             </label>
             <label className="input-group">
               <input
+                required
                 type="text"
                 name="photoURL"
                 placeholder="Photo URL"
@@ -167,6 +175,7 @@ const AddCoffee = () => {
           </div>
         </div>
         <input
+          required
           type="submit"
           value="Add Coffee"
           className=" btn-block bg-orange-900 py-3 rounded-lg text-white hover:bg-orange-950 font-semibold"

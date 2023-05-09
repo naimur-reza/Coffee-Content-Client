@@ -1,5 +1,10 @@
 import React from "react";
-import { useLoaderData, Link, useNavigation } from "react-router-dom";
+import {
+  useLoaderData,
+  Link,
+  useNavigation,
+  ScrollRestoration,
+} from "react-router-dom";
 import nicetiles from "../assets/images/more/19.png";
 import { FaArrowLeft } from "react-icons/fa";
 const CoffeeDetails = () => {
@@ -12,6 +17,7 @@ const CoffeeDetails = () => {
     loadedData || {};
   return (
     <>
+      <ScrollRestoration />
       <div className="max-w-2xl mx-auto">
         <Link
           to={"/"}
@@ -22,7 +28,7 @@ const CoffeeDetails = () => {
       </div>
       <div
         key={_id}
-        className="mx-5 my-10 max-w-2xl lg:mx-auto p-8 space-y-2 bg-gray-100 rounded-lg flex items-center justify-evenly shadow-lg"
+        className="mx-5 gap-5 my-10 max-w-2xl lg:mx-auto p-8 space-y-2 bg-gray-100 rounded-lg flex items-center justify-evenly shadow-lg"
       >
         <div className="w-40">
           <img className="w-full h-full" src={photoURL} alt="" />
